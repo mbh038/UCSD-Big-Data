@@ -1,0 +1,148 @@
+Hi, welcome back. We're in the midst of
+talking about Data Scientist. What do they do? How do you find them? What are the skills that you
+need to gain to become one? So I love this little cartoon. I'm telling you the more information we
+store up, it get cloudier and cloudier. This is what we're trying to address. We do not want things to get cloudier,
+we wanna make them clearer, we wanna find insight in bad data. If you think about the traditional
+approaches to data mining, machine learning, [INAUDIBLE],
+whatever you'd like to call them. For years he used to be white-coat PhD,
+scientist, typically statistician, or someone maybe with a PhD in
+machine learning and computer science. The tools were very expensive. I remember in the olden days,
+we had to code everything ourselves. If we wanted to do act official on your
+network, you would probably call yourself. It would take a pretty
+good amount of effort, and long period of time to accomplish that. We are debugging. Then we had open source
+movement come along. People started sharing the codes today. It is very different than even 10,
+15, 20 years ago. Today we have tools. They are really great. We have tools that can handle databases,
+BI. We have tools that
+are built into databases. We have a variety of open source tools
+that can help us deal with large data that can help us find insight
+into data performing analytics. Those are not expensive anymore. It's really the skills and the experience that you need to
+gain to be able to do these jobs. As we mentioned early in our previous
+lecture, there's many jobs available. For both the predictive analytics,
+data scientists, statistical analysts, all the way to data scientists. But many people are lacking
+in education and experience. It turns out that hands-on
+experience is extremely valuable for these kinds of tools and techniques, and we'll see that more and
+more as we get deeper into our classes. So who are the data scientists? What kinds of skills should they have? Really, data science is
+a multi disciplinary effort. If you'd like to become a data scientist,
+you not only really need to understand the statistics machine learning,
+operation research often times, you really need to be able to gather
+the data from these large data sources. So that immediately brings the big
+data technologies into the picture. There might still be some databases and
+data warehouses. But the data might be
+residing on a Hadoop system. And you need to be able to
+understand how to query and how to deploy jobs in order to
+accomplish your analysis on there. Visualization is a very
+large part of that. Many machine learning techniques
+are based on a lot of statistics, so some basic statistic knowledge
+is absolutely useful. But we have had people with
+these kinds of skills, those geeky nerdy people
+that sit in the back corner. Just kidding, I'm one of those, and
+we have had them for many years. So why didn't we call
+them data centers then? Why are we now talking about this now? What is the problem with having these
+people at the core of a project, giving them data and
+having them run off with it? Well, the problem is that many of
+these extremely technical people might not have these other
+skills we're talking about here. It is very important to
+understand the domain. We need to know the domain. What does the data look like? Where is it coming from? How was it collected? We need to have good communication
+skills to be able to communicate and understand the language
+of the domain experts. We have to have this close
+relationship with them where we can talk about the data. What are they trying to accomplish? Presentation skills
+are extremely important. Most of the people that are technically
+savvy do not like presenting. What a surprise. We need to be inquisitive,
+we need to ask the right questions. I always tell my students
+that I can probably make more models that I have the data. But what does that help us with? Nothing. We need to ask the right questions
+to solve the right problems that will bring the business
+value to the business. This is where the second
+part of this cycle comes in. The problem solving techniques, being able
+to analyze and understand the business. And really buy into the business strategy,
+and really spend a time trying to understand that business and
+understand how this algorithms, patterns, insights will be able to
+bring that RRI to that business. This is what really makes it difficult
+to find a data scientist, because it is really difficult to have all of
+these skills together in the one person. What is happening in the industry
+is enterprises are putting teams of the scientists where they can
+speak the same or similar language and they have deeper expertises
+in some of the areas. Maybe classic strategies and the others,
+but they can put them together, and make them work like a team. So we say that data
+science is a team sport. So what are the successful
+characteristics? So we talked about some of
+the skills you have to have. It really is that intellectual
+curiosity and intuition. I always tell people that I think that
+machine learning is the most creative part of computer science. And that's because you really have
+to have a little bit of intuition, it lets you get to know the data. You have to be curious
+enough to dig deeper. And often times as you are working
+on a path to developing models, for example, for
+conversion of the customers and predicting which customers
+might buy a particular product. You might discover a whole another
+world of additional insights, because your curiosity will
+lead you to that point. Absolutely necessary is communication and
+engagement with other groups, with other departments,
+with other people on your team. You really need to
+engaged in this iterative meetings and
+interactions with business users, with business analysts,
+with the leaders, with the managers, as well as with the IT people, and
+people who are providing you the data. You really need to be able to present and
+tell a story about this data. There's millions data points and
+news graphs you can show people. But really, what is the story? How can you really guide someone, who
+did not go through the entire process of data preparation, cleaning,
+understanding modeling? To actually understand the entire process
+of data science and be able to tell them that story so they understand what these
+models and graphs are telling them into actual curiosity intuition will help you
+do that, and make creative presentation, creative models,
+that will add to the business value. Because you are doing it to understand
+that business side of things which is why we have the business savvy is one of the important characteristics. So I got around and I don't need to
+bring any company here as an a good or bad example, but as I was thinking about
+this, there's a lot of jobs out there for data scientists. And I went and found this one
+from awhile ago actually and i wanted to just show what a typical,
+although things are changing a little bit. This probably is a typical
+example of what a job posted for data scientist looks like. So this particular one was for
+Amazon, and it was for the shopper marketing insight team. And it's really interesting to see, because you can really pinpoint all of
+those characteristics we have just talked about from this particular
+job description. So it is for learning more about customer inside the
+targeted recommendations and advertising. They want someone who can really
+understand that piece of the business. So here you are now, I'm a data scientist. I need to understand advertising. I've never done advertising,
+I don't know how marketing works. I need to talk to the domain expert, then
+really understand from the marketing team. What do they do? How does the process work? What does it look like? And then, they're looking for data
+scientists who, not only understand that, but can actually type. You can actually write some equations,
+write some coding, be able to retrieve, manipulate,
+and analyze the data. Sometimes we joke about they're open for
+God, but really it is a list of these characteristics
+that we have just talked about. So just being someone who
+understands machine learning, or just being someone who just
+understands marketing. It's not enough to fill in
+a job of a data scientist. You really need the mix of these
+different disciplines, and this is why we say data science
+is a multidisciplinary area. Another cute little cartoon. If you're a data scientist,
+don't drop any data. Most of the time you will be working
+on some data that is proprietary for your organization, and
+should not be shared with others. All of the Hadoop and
+other big data systems are very serious about ensuring the security and
+privacy of the data. And that is a whole another
+topic that we can spend a while, the time talking about privacy ethics and
+non-technical sides of data science. They are just as important. So what is the modern data scientist look? Everyone in every profession
+wants to become better every day. If you already consider
+yourself a data scientist, what are the additional skills
+you would like to learn? If you would like to
+become a data scientist, here is kind of a nice set of
+skills that people in the industry believe that with data scientist
+on there title should have. So here is the set of mathematical and
+statistical skills, programming databases,
+understanding Hadoop, pick and hide. Maybe some mass produce concepts
+pair all databases possibly. Understanding it may be the crowd, and where the competition is
+actually gonna be executed. Then, you have this set of domain
+knowledge and such skills. And honestly,
+those are extremely important. If you don't have enough
+curiosity about the data, you might not include all
+the data that you could. And the more data include,
+the better you represent that data, the better insight you're going to get. It is that hacker mindset that people talk
+about that you really need to constantly keep thinking about how to
+solve this problem, and then be able to communicate and visualize
+that problem and tell a story and translate these data driven insights
+in the language that people who are not technical can understand and consume. Being a woman data scientist,
+I had to find one with a woman. This one comes from FICO, and it really
+isn't telling us a whole lot of more about the story, but it is just a more
+interesting way of presenting it. A degree in geek. Whatever that means,
+you need to be mathlete. So you need to understand the math and
+run with it. There's a lot of interesting things
+that you can do as you're becoming data scientist, and
+be able to have some fun and creativity. At the end of the day, really, [SOUND]
+this is what a data scientist looks like. Just kidding. We'll see you next time.

@@ -1,0 +1,68 @@
+In the previous lecture, we have talked
+a little bit more about how is big data fueling the buzz and excitement about
+what the data scientists are doing. What is the discipline of data science? And how this has becoming
+the hot new gig in tech. So, we know there's a shortage
+of talent necessary to fill the organizations,
+in order to deal with all of the big data. According to the McKinsey's report,
+by 2018 there will be a shortage of 140 to 190,000 people and
+about 1.5 million managers. No matter how many times I talk about this
+it never really ceases to amaze me that there is that many more managers
+than actual people doing work? Anyhow, there is a good reason for that. Obviously, there is projects where numerous projects that might have to
+deal with the analytics or big data but they're not necessarily employing a lot
+of data scientists for that matter. However, those numbers are pretty large. Look at what Fortune Magazine has said. Even with the unemployment
+rate this large, there's still a cool nerdy job that
+people are working to fill in. So, the data science
+jobs are growing rapidly. There is just this large gap and look how quickly these job
+searches on Indeed.com and LinkedIn.com, just two quick examples, how much these jobs are in demand? So, if you're here listening to these
+lectures, you're doing an awesome job. You're getting there, you're on your
+way to become a data scientist and maybe fill in some of these
+positions in the next year or two. So what can we do to narrow this gap? How can we expand our education system? Come up with the curriculums
+to fill in these spots. So, we really wanna understand
+who were people that are or can become data scientist? Who are these mysterious data scientist? What do they do? What are the jobs? What are the skills? Where do you find them? How do you find them? If I am a business intelligence,
+or a business analyst, am I well suited to
+become a data scientist? There's a lot of questions that come out regarding how do you find
+the data sentence, or maybe how do you train your internal
+staff and employees who already have the domain expertise about your
+business to maybe become data scientist. And so, there is a lot of
+different expectations about who the data scientist is? What should they do? What is the career? What is a career path? So let's look into that. So the new cool kids on campus says that,
+if your data is an enigma, then you need a lot of number crunchers
+and you see that name, number crunchers, unlocking the secrets of the data very
+often, but really what are the skills? So there is one of the little
+tag clouds that really does indicated pretty well what
+the data scientist skills are. Often times they're coming out of
+academia with some kind of a degree. You need to be able to have the skills
+to build predictive models. Machine learning, typically predictive
+analytics, data mining, those kinds of key words come in making predictions,
+being able to do some filtering. Social media data is very important. Sentiment analysis, text mining, be savvy. It's really an interesting crowd and
+it kind of shows that, there's a lot of these skills,
+MySQL, maybe Python, maybe R. Some different collaborative
+techniques and things like that. So, what's really interesting is that,
+unlike a lot of other disciplines, data science and big data are kind of
+becoming rising part of our culture. Anywhere from Moneyball, a movie with Brad Pitt that most
+of you have probably seen it. All the way from that to the big data books that have been
+written for everyday people. They're not necessarily very technical. They're not going into a whole
+lot of depth into mathematical equations and methods behind them. But they do tell you how these new
+techniques and technologies will transform how we live, how we work, how we think,
+what we buy, who lies, who pretends. There is excellent book about
+the human face of big data. There is just unbelievable, really
+great visualizations that can really and for more information about the data
+and can really translate that message out. What is it doing? How can it help our humanity? Super Crunchers, Nate Silvers who is
+the leading columnist in New York TImes, has a column talking about how you use
+this data to do cool, interesting things. There is data for the public good. There's data that's helping us solve
+crime cases and things like that. So this is all great. There's a lot of movies, there's a lot of
+information, there's a book I mentioned that talks about companies who are data
+driven and using analytics, being in the forefront and had that, from
+the companies they're going the old way. Not really utilizing these techniques and
+not making data driven decisions. So, it is not only part of our culture and
+how we're starting to think and read and watch movies and
+things we do and actions we take, but it is becoming a big
+part of the enterprises too. In the old times we have CIOs, CEOs. We might have had analytics teams or
+the IT departments. In the recent years we started having,
+seeing titles like Chief Data Officer. And that's really great. But now,
+they're not just Chief Data Officers. What you now see is Chief Data Scientists. Now even organizations are realizing
+that this is a very important role in an organization and
+deserves its own title. Data driven decisions for everything
+are being deployed throughout large, medium and small enterprises. Making strategic, tactical,
+operational decisions are all based on the big data and the insight
+that we can gather from big data. This is why we need data scientists and this is what the data scientists
+are gonna help us do.

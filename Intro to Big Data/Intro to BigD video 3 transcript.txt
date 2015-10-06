@@ -1,0 +1,74 @@
+Hi, welcome back. So we have talked about
+the shortage of data scientists, what kinds of skills you would
+need to learn to become one. And professional community at large
+is interested in how they can train more people, how we can become better
+in analyzing all the data that we have. And so what happened a couple of years
+ago, there was a couple of people from this O'Reilly Strata Survey, and
+they called it Analyzing the Analyzers. And what they did was they
+took a bunch of people, asked them to take a survey, and
+they took an interesting approach. They were not interested
+in years of experience, academic degrees, favorite tools. They did not care about verticles of
+the industries or titles or pay scales or where they sit in the org chart. They really just wanted to
+understand the skills they had. And so they asked a number
+of different questions, and the responses tended to
+either agree or disagree, and they would self-identify
+into these different groups. And these groups were kind of interesting
+because people were talking about oh, well I consider myself a scientist or
+statistician or I'm a business person. And so what I really love about this
+survey is that they actually used a machine learning algorithm, Clustering,
+to take all of these correspondents and cluster them into four groups, which they
+named Data Developer, Data Researcher, Data Creative, and
+then Data Businessperson. So they developed 22 generic skills
+that spanned across the range of useful things that data scientists
+might do at their work. And it turns out that a few concrete
+examples were provided with each skill kind of like if I'm a programmer, I like to do x and y. And, so, they offered all of
+these skills to each one of the people who took the survey and
+they tended to rank their skills similarly to their skill group,
+which was an interesting thing, too. So it turns out that among
+each of these correspondents, these four groups had
+kind of a mix of skills. And you can see here that, for example,
+you can see that Businesspersons are most likely to have a larger set of
+skills in that area of business. However, many of them
+knew about big data and machine learning and
+had quite a lot of statistical background. Then if you look at the Data Creative,
+they had quite a lot of statistics and
+machine learning, big data skills, and they had some math, and operations,
+OR stands for Operations Research. Then you can see that the Data Researcher
+had a very heavy statistical skills, while the Data Developers had a lot
+of different programming skills, which is to be expected. So, trying to define these
+kinds of set of skills and the breadth of skills have shown us that,
+although the data science as a discipline is still developing,
+they're starting to be subgroup developed. You can think about that as
+maybe similar to engineering. When the engineering first came
+out there wasn't as many different types of engineering like we do now. Now we have a mechanical engineer and
+electrical engineer and medical equipment engineer, and IT engineer, and
+many different types of subgroups. It seems like the data science is starting
+to create these subgroups, as well, and subdisciplines. And so if we look at these deep expertises that these four subgroups had, it seems
+like there was at least one of these expertises that that group had
+a lot of knowledge in-depth. This is what we call T-Shaped Skills. So if you think about these four different
+groups and a number of different skills, typically, it tends that one
+skill goes into the depth and all the other skills have some of them,
+but maybe not as much. We have talked about data science
+inherently being a collaborative team sport or collaborative area. And you can see that,
+in this particular slide, the Data Businesperson had a pretty good
+example of a t-shaped set of skills. They had a lot of skills in business, but
+then had pretty heavy skill in math and statistics, and maybe some with a bit
+more shallow skills in programming. If you look at the Data Creative area,
+they kind of had the least of a T-shape. They were, what they call them,
+jack-of-all-trades, which might not be a politically correct way, but this is
+what they self-identified themselves as. But you can see that, for example, at the bottom right we
+had Data Developers. It's to be expected that it had
+pretty deep programming skills. They have a lot of big data,
+some machine learning skills in math, but maybe a little less business
+understanding and statistics. So now that we know what
+skills data scientists have, there's a lot of questions about
+what skills should I acquire. And it seems like they can be
+set into three major groups. Data Manipulation at scale
+because we now have large data. And whether that's parallel and
+distributed databases, parallel querying, in-database analytics, in-memory
+analytics, Hadoop, these are types of new technologies that the data scientist
+needs to learn or keep up with. Then we have Analytics, Predictive
+Analytics, Graph Analytics, Text mining, these are all analytical sides of
+things that you would need to acquire. And if you're taking this
+Coursera specialization, we will certainly cover those. And then you have to have these additional
+skills that allow you to present, to communicate, and visualize the data.
