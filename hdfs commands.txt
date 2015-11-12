@@ -1,0 +1,55 @@
+# for each file
+gedit join2_mapper.py
+more wordcount_mapper.py
+
+# for executable files (.py,.r etc)
+chmod +x wordcount_mapper.py
+
+# check which directory
+pwd
+
+#make new directory on HDFS system
+hdfs dfs -mkdir /user/cloudera/input/
+
+#copy local data files to HDFS system
+hdfs dfs -put /home/cloudera/join1_mapper.py /user/cloudera/input
+hdfs dfs -put /home/cloudera/join1_reducer.py /user/cloudera/input
+hdfs dfs -put /home/cloudera/join1_FileA.txt /user/cloudera/input
+hdfs dfs -put /home/cloudera/join1_FileB.txt /user/cloudera/input
+
+# see files on HDFS
+hdfs dfs -ls /user/cloudera/input
+
+# Streaming command
+hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -input /user/cloudera/input -output /user/cloudera/output_join -mapper /home/cloudera/join1_mapper.py -reducer /home/cloudera/join1_reducer.py
+
+hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -input /user/cloudera/input -output /user/cloudera/output_join10 -mapper /home/cloudera/join2_mapper.py -reducer /home/cloudera/join2_reducer.py -numReduceTasks 1
+
+# view a file
+hdfs dfs -cat /user/cloudera/output_join10/part-00000 
+
+# list files in a directory
+hdfs dfs -ls /user/cloudera/output_join9  
+hdfs dfs -ls /user/cloudera/input
+
+# delete a file
+hdfs dfs -rm -r /user/cloudera/input/testfile1.txt 
+
+# load a file from hdfs into Cloudera
+hdfs dfs -getmerge /user/cloudera/output_join7/* total_viewer_counts2.txt
+
+python make_join2data.py y 1000 13 > join2_gennumA.txt
+python make_join2data.py y 2000 17 > join2_gennumB.txt
+python make_join2data.py y 3000 19 > join2_gennumC.txt
+python make_join2data.py n 100  23 > join2_genchanA.txt
+python make_join2data.py n 200  19 > join2_genchanB.txt
+python make_join2data.py n 300  37 > join2_genchanC.txt
+
+hdfs dfs -put /home/cloudera/join2_gennumA.txt /user/cloudera/input
+hdfs dfs -put /home/cloudera/join2_gennumB.txt /user/cloudera/input
+hdfs dfs -put /home/cloudera/join2_gennumC.txt /user/cloudera/input
+hdfs dfs -put /home/cloudera/join2_genchanA.txt /user/cloudera/input
+hdfs dfs -put /home/cloudera/join2_genchanB.txt /user/cloudera/input
+hdfs dfs -put /home/cloudera/join2_genchanC.txt /user/cloudera/input
+
+hdfs dfs -getmerge /user/cloudera/output_join10/* total_viewer_counts.txt

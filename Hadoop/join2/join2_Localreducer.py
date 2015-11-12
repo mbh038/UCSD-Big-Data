@@ -25,6 +25,7 @@ for line in mapResult:
         if ABC_dict.has_key(key_value[1])==False:
             ABC_dict.update({key_value[1]:0})
 mapResult.close()
+
 line_cnt = 0  #count input lines
 mapResult=open('mapOutput.txt','r')
 for line in mapResult:
@@ -33,7 +34,7 @@ for line in mapResult:
     line_cnt   = line_cnt+1
     
     if ABC_dict.has_key(key_value[0]):
-        ABC_dict[key_value[1]]+=1
+        ABC_dict[key_value[0]]+=int(key_value[1])
 
 for key, value in ABC_dict.iteritems() :
     #print str(key)+" "+str(value) 
