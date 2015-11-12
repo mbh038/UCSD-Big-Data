@@ -13,7 +13,7 @@ ABC_dict={}
 
 # see https://docs.python.org/2/tutorial/datastructures.html for list details
 
-line_cnt           = 0  #count input lines
+line_cnt = 0  #count input lines
  
 for line in sys.stdin:
     line       = line.strip()       #strip out carriage return
@@ -26,7 +26,7 @@ for line in sys.stdin:
     else:
         break
 
-line_cnt           = 0  #count input lines
+line_cnt = 0  #count input lines
  
 for line in sys.stdin:
     line       = line.strip()       #strip out carriage return
@@ -37,5 +37,5 @@ for line in sys.stdin:
         ABC_dict[key_value]+=1
 
 for key, value in ABC_dict.iteritems() :
-    print key+str(" ")+value      
+    print str(key)+" "+str(value)    
         
