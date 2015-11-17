@@ -23,10 +23,10 @@ hdfs dfs -ls /user/cloudera/input
 # Streaming command
 hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -input /user/cloudera/input -output /user/cloudera/output_join -mapper /home/cloudera/join1_mapper.py -reducer /home/cloudera/join1_reducer.py
 
-hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -input /user/cloudera/input -output /user/cloudera/output_join10 -mapper /home/cloudera/join2_mapper.py -reducer /home/cloudera/join2_reducer.py -numReduceTasks 1
+hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -input /user/cloudera/input -output /user/cloudera/output_join11 -mapper /home/cloudera/join2_mapper.py -reducer /home/cloudera/join2_reducer.py -numReduceTasks 1
 
 # view a file
-hdfs dfs -cat /user/cloudera/output_join10/part-00000 
+hdfs dfs -cat /user/cloudera/output_join11/part-00000 
 
 # list files in a directory
 hdfs dfs -ls /user/cloudera/output_join9  
@@ -53,3 +53,6 @@ hdfs dfs -put /home/cloudera/join2_genchanB.txt /user/cloudera/input
 hdfs dfs -put /home/cloudera/join2_genchanC.txt /user/cloudera/input
 
 hdfs dfs -getmerge /user/cloudera/output_join10/* total_viewer_counts.txt
+
+fileA = sc.textFile("input/join1_FileA.txt")
+fileB = sc.textFile("input/join1_FileB.txt")
