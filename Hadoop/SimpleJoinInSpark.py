@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+Simple Join in Spark
+
 Created on Mon Nov 16 16:49:48 2015
 
 @author: michael.hunt
 """
-
 
 def split_fileA(line):
     # split the input line in word and count on the comma

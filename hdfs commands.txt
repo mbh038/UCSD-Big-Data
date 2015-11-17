@@ -33,7 +33,7 @@ hdfs dfs -ls /user/cloudera/output_join9
 hdfs dfs -ls /user/cloudera/input
 
 # delete a file
-hdfs dfs -rm -r /user/cloudera/input/testfile1.txt 
+hdfs dfs -rm -r /user/cloudera/input/join1_FileA.txt 
 
 # load a file from hdfs into Cloudera
 hdfs dfs -getmerge /user/cloudera/output_join7/* total_viewer_counts2.txt
@@ -54,5 +54,134 @@ hdfs dfs -put /home/cloudera/join2_genchanC.txt /user/cloudera/input
 
 hdfs dfs -getmerge /user/cloudera/output_join10/* total_viewer_counts.txt
 
+# Start python
+PYSPARK_DRIVER_PYTHON=ipython pyspark
+
+# load data sets
 fileA = sc.textFile("input/join1_FileA.txt")
 fileB = sc.textFile("input/join1_FileB.txt")
+
+fileA.collect()
+fileB.collect()
+
+# Mapper for File A
+
+def split_fileA(line):
+    # split the input line in word and count on the comma
+    <ENTER_CODE_HERE>
+    # turn the count to an integer  
+    <ENTER_CODE_HERE>
+    return (word, count)
+
+test_line = "able,991"
+split_fileA(test_line)  # split file A is a python function.
+
+# map transformation
+fileA_data = fileA.map(split_fileA)
+fileA_data.collect()
+
+# Mapper for File B
+
+def split_fileB(line):
+    # split the input line into word, date and count_string
+    <ENTER_CODE_HERE>
+    <ENTER_CODE_HERE>
+    return (word, date + " " + count_string) 
+
+fileB_data = fileB.map(split_fileB)   
+fileB_data.collect() 
+
+# run join
+fileB_joined_fileA = fileB_data.join(fileA_data)
+
+# verify the result
+fileB_joined_fileA.collect()
+
+
+# Read shows files
+show_views_file = sc.textFile("input/join2_gennum?.txt")
+
+# view first two lines
+show_views_file.take(2)
+
+# Parse shows files
+def split_show_views(line):
+    """
+    Function to split and parse each line of the data set
+    line: 'show,views' a string from a gennum file
+    """
+    # split the input line in word and count on the comma
+    show,views=line.split(",")
+    # turn the count to an integer  
+    views=int(views)
+    return (show, views)
+    
+show_views = show_views_file.map(split_show_views)
+
+# view the result
+show_views.collect()
+
+# view just the first two lines
+show_views.take(2)
+
+# Read channel files
+show_channel_file = sc.textFile("input/join2_genchan?.txt")
+
+# view first two lines
+show_channel_file.take(2)
+
+# Parse channel files
+def split_show_channel(line):
+    """
+    Function to split and parse each line of the data set
+    line: 'show,channel' a string from a gennum file
+    """
+    show,channel=line.split(",")
+    return (show, channel)
+
+show_channel = show_channel_file.map(split_show_channel)    
+
+# view the result
+show_channel.take(2)
+
+# Join the two data sets
+# use the join transformation, order of files does not matter
+joined_dataset = show_views.join(show_channel)
+joined_dataset = show_channel.join(show_views)
+
+# view the result
+joined_dataset.take(2)
+
+for k,v in joined_dataset.groupByKey().collect():
+print "Key:", k, ",Values:", list(v)
+
+# Extract channel as key
+# want total viewers by channel
+
+def extract_channel_views(show_views_channel): 
+    """
+    Aim is to find the total viewers by channel
+    show_views_channel: 'show', (views, 'channel')
+    returns:an RDD with the channel as key and all the viewer counts, whichever
+    is the show.
+    """
+    channel,views=show_views_channel[1]
+    return (channel, views)
+    
+
+channel_views = joined_dataset.flatMap(extract_channel_views)
+channel_views = joined_dataset.map(extract_channel_views)
+channel_views = joined_dataset.groupByKey(extract_channel_views)
+
+channel_views = joined_dataset.map(extract_channel_views)
+
+def channel_is_BAT(channel_views):
+    return channel_views[0]=="BAT"
+    
+BAT_views = channel_views.filter(channel_is_BAT)
+ 
+def sum_channel_viewers(channel,views):
+    return sum(views)
+    
+channel_views.map(sum_channel_viewers).collect()
+channel_views.reduceByKey(sum_channel_viewers).collect()
