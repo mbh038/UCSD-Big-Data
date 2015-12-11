@@ -1,0 +1,41 @@
+yelp_df.printSchema()
+yelp_df.select("open").show()
+
+yelp_df.select("cool").agg({"cool":"avg"}).collect()
+
+yelp_df.groupBy("stars").avg("cool").show()
+
+yelp_df.filter(yelp_df.review_count >=10).groupBy("stars").avg("cool").show()
+
+yelp_df.filter(yelp_df.review_count >10).filter(yelp_df.open =='True').groupBy("stars").avg("cool").show()
+
+from pyspark.sql.functions import asc,desc
+
+yelp_df.filter(yelp_df.review_count >=10).filter(yelp_df.open =='True').groupBy("state").count().orderBy(desc('count')).show()
+
+yelp_df.groupBy("business_id").count().orderBy(desc('count')).show()
+
+orders_df=sqlCtx.sql("SELECT * FROM orders")
+
+orders_df.printSchema()
+
+orders_df.filter(orders_df.order_status=="SUSPECTED_FRAUD").count()
+
+orders_df.count()
+
+orders_df.show(20)
+
+orders_df.filter(orders_df.order_customer_id>250).count()
+
+orders_df.select("order_status").agg({"order_status":"SUSPECTED_FRAUD"}).count()
+
+orders_df.registerTempTable('orders')
+
+orders_df=sqlCtx.sql("SELECT * FROM orders")
+fraud_orders.count()
+
+sqlCtx.sql("SELECT * FROM orders").limit(2).collect()
+
+sqlCtx.sql("SELECT order_status  FROM orders").limit(2).collect()
+
+directory /user/hive/warehouse/order/.metadata

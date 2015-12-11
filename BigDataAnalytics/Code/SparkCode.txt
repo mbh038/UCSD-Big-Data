@@ -93,3 +93,112 @@ inferSchema = 'true',
 
 path = 'file:///usr/lib/hue/apps/search/examples/collections/solr_configs_yelp_demo/index_data.csv')
 
+PYSPARK_DRIVER_PYTHON=ipython pyspark --packages com.databricks:spark-csv_2.10:1.3.0
+
+from pyspark.sql.types import *
+
+yelp_df = sqlCtx.load(
+
+source="com.databricks.spark.csv",
+
+header = 'true',
+
+inferSchema = 'true',
+
+path = 'file:///usr/lib/hue/apps/search/examples/collections/solr_configs_yelp_demo/index_data.csv')
+
+yelp_df.printSchema()
+
+yelp_df.count()
+
+-------------------------------------------------
+
+yelp_df.filter(yelp_df.useful >=1).count()
+
+yelp_df.filter(yelp_df["useful"] >=1).count()
+
+yelp_df.filter("useful >=1").count()
+
+yelp_df.select("business_id:", "useful")
+
+yelp_df.select("business_id", "useful").agg({"useful":"max"}).collect()
+
+yelp_df.select("id", "useful").take(5)
+
+yelp_df.select("id", yelp_df.useful/28*100).show(5)
+
+yelp_df.select("id", (yelp_df.useful/28*100).cast("int")).show(5)
+
+useful_perc_data = yelp_df.select(
+
+yelp_df.id.alias("uid"),
+
+(yelp_df.useful/28*100).cast("int").alias("useful_perc")
+
+)
+
+from pyspark.sql.functions import asc, desc
+
+useful_perc_data = yelp_df.select(
+
+yelp_df.id.alias("uid"),
+
+(yelp_df.useful/28*100).cast("int").alias("useful_perc")
+
+).orderBy(desc("useful_perc"));
+
+useful_perc_data.show(10)
+
+--inner join
+
+useful_perc_data2 = useful_perc_data.join(
+
+yelp_df,
+
+yelp_df.id == useful_perc_data.uid,
+
+"inner")
+
+useful_perc_data2.count()
+
+useful_perc_data2.select("uid","useful_perc","review_count").show(10)
+
+--Cache in memory
+
+useful_perc_data.join(
+
+yelp_df,
+
+yelp_df.id == useful_perc_data.uid,
+
+"inner").cache().select("uid","useful_perc","review_count").show(10)
+
+SQL
+===============================================================
+
+yelp_df.registerTempTable("yelp")
+
+filtered_yelp = sqlContext.sql("""SELECT *
+
+FROM yelp
+
+WHERE useful >= 1""")
+
+useful_perc_data.registerTempTable("useful_perc_data")
+
+joined_yelp = sqlContext.sql("""
+
+SELECT upd.uid,
+
+upd.useful_perc,
+
+y.review_count
+
+FROM useful_perc_data upd
+
+INNER JOIN yelp y
+
+ON upd.uid = y.id
+
+ORDER BY y.review_count DESC""")
+

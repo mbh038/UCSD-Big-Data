@@ -32,6 +32,8 @@ hdfs dfs -cat /user/cloudera/output_join11/part-00000
 hdfs dfs -ls /user/cloudera/output_join9  
 hdfs dfs -ls /user/cloudera/input
 
+hdfs dfs -ls /user/hive/warehouse/customers/
+
 # delete a file
 hdfs dfs -rm -r /user/cloudera/input/join1_FileA.txt 
 
