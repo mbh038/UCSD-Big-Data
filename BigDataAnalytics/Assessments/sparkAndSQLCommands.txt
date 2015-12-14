@@ -1,0 +1,65 @@
+Using Spark on Yelp
+
+yelp_df.printSchema()
+yelp_df.select("open").show()
+
+yelp_df.select("cool").agg({"cool":"avg"}).collect()
+
+yelp_df.groupBy("stars").avg("cool").show()
+
+yelp_df.filter(yelp_df.review_count >=10).groupBy("stars").avg("cool").show()
+
+yelp_df.filter(yelp_df.review_count >10).filter(yelp_df.open =='True').groupBy("stars").avg("cool").show()
+
+from pyspark.sql.functions import asc,desc
+
+yelp_df.filter(yelp_df.review_count >=10).filter(yelp_df.open =='True').groupBy("state").count().orderBy(desc('count')).show()
+
+yelp_df.groupBy("business_id").count().orderBy(desc('count')).show()
+
+
+
+Using SQL on Orders 
+
+orders_df=sqlCtx.sql("SELECT * FROM orders")
+orders_df.printSchema()
+
+orders_fraud=sqlCtx.sql("SELECT * FROM orders WHERE order_status = 'SUSPECTED_FRAUD'")
+orders_fraud.count()
+
+orderItems_df=sqlCtx.sql("SELECT * FROM order_items")
+orderItems_df.printSchema()
+
+orderItems_df.registerTempTable("orders")
+
+sqlCtx.sql("""SELECT order_item_order_id, SUM(order_item_subtotal) AS ordersSubTotal FROM orders GROUP BY order_item_order_id ORDER BY ordersSubTotal DESC""").show()
+
+orderItems_df.registerTempTable("orderItems")
+
+orders_df=sqlCtx.sql("SELECT * FROM orders")
+orders_df.registerTempTable("ords")
+
+orderItems_df=sqlCtx.sql("SELECT * FROM order_items")
+orderItems_df.registerTempTable("ordsItems")
+
+sqlCtx(SELECT a.X, b.Y, a.Z FROM Table 1 a inner join table 2 b WHERE <clause / condition here> ON a.Y = b.Y GROUP BY (<whatever field>) ORDER BY (<ASC or DESC>)
+
+oj_df=sqlCtx.sql("SELECT ordsItems.order_item_product_id,ords.order_customer_id,ords.order_status,ordsItems.order_item_subtotal,ordsItems.order_item_product_price FROM ords INNER JOIN ordsItems ON ords.order_id=ordsItems.order_item_order_id WHERE ords.order_status='COMPLETE'")
+oj_df.show(5)
+
+oj_df.registerTempTable("oj")
+sqlCtx.sql("SELECT AVG(order_item_product_price) FROM oj").show()
+
+oj_df.printSchema()
+sqlCtx.sql("SELECT order_customer_id, SUM(order_item_subtotal) AS customerTotal FROM oj GROUP BY order_customer_id ORDER BY customerTotal DESC").show()
+
+
+Pick out incomplete orders 
+ojnc_df=sqlCtx.sql("SELECT ords.order_id,ordsItems.order_item_subtotal FROM ords INNER JOIN ordsItems ON ords.order_id=ordsItems.order_item_order_id WHERE ords.order_status!='COMPLETE'")
+ojnc_df.show(5)
+
+Make an SQL readable table from the df.
+ojnc_df.registerTempTable("ojnc")
+
+Which incomplete orders had highest total(=sum of subtotals)?
+sqlCtx.sql("SELECT order_id, SUM(order_item_subtotal) AS ncOrderTotal FROM ojnc GROUP BY order_id ORDER BY ncOrderTotal DESC").show()

@@ -81,7 +81,7 @@ sqlCtx.jsonFile("file:///home/cloudera/students.json").show()
 
 --Restart pyspark
 
-PYSPARK_DRIVER_PYHON=ipython pyspark --packages com.databricks:spark-csv_2.10:1.3.0
+PYSPARK_DRIVER_PYTHON=ipython pyspark --packages com.databricks:spark-csv_2.10:1.3.0
 
 yelp_df = sqlCtx.load(
 
